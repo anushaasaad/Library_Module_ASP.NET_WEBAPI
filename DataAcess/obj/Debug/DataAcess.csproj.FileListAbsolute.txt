@@ -1,0 +1,12 @@
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\bin\Debug\DataAcess.dll.config
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\bin\Debug\DataAcess.dll
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\bin\Debug\DataAcess.pdb
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\bin\Debug\EntityFramework.dll
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\bin\Debug\EntityFramework.xml
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\obj\Debug\DataAcess.csproj.AssemblyReference.cache
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\obj\Debug\DataAcess.csproj.CoreCompileInputs.cache
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\obj\Debug\DataAcess.csproj.CopyComplete
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\obj\Debug\DataAcess.dll
+C:\Users\SMIT\source\repos\Librarymodule\DataAcess\obj\Debug\DataAcess.pdb

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="librariaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="admin_name" Type="nvarchar(max)" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="author_id" />
+    </Key>
+    <Property Name="author_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="author_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Book_inventory">
+    <Key>
+      <PropertyRef Name="book_id" />
+    </Key>
+    <Property Name="book_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="book_name" Type="nvarchar(max)" />
+    <Property Name="genre" Type="nvarchar" MaxLength="50" />
+    <Property Name="edition" Type="nvarchar" MaxLength="50" />
+    <Property Name="actual_stock" Type="nchar" MaxLength="10" />
+    <Property Name="language" Type="nvarchar(max)" />
+    <Property Name="book_cost" Type="nchar" MaxLength="10" />
+    <Property Name="pages" Type="nchar" MaxLength="10" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="current_stock" Type="nchar" MaxLength="10" />
+    <Property Name="img_link" Type="nvarchar" MaxLength="50" />
+    <Property Name="author_name" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'libraria.dbo.Book_issue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Book_issue">
+    <Key>
+      <PropertyRef Name="student_id" />
+      <PropertyRef Name="book_id" />
+      <PropertyRef Name="date_issue" />
+      <PropertyRef Name="date_due" />
+    </Key>
+    <Property Name="student_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="book_id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="date_issue" Type="date" Nullable="false" />
+    <Property Name="date_due" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="student_id" />
+    </Key>
+    <Property Name="student_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="student_name" Type="nvarchar(max)" />
+    <Property Name="department" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Book_issue_Book_inventory">
+    <End Role="Book_inventory" Type="Self.Book_inventory" Multiplicity="1" />
+    <End Role="Book_issue" Type="Self.Book_issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book_inventory">
+        <PropertyRef Name="book_id" />
+      </Principal>
+      <Dependent Role="Book_issue">
+        <PropertyRef Name="book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Book_issue_student">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="Book_issue" Type="Self.Book_issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="student_id" />
+      </Principal>
+      <Dependent Role="Book_issue">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="librariaModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Book_inventory" EntityType="Self.Book_inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Book_issue" EntityType="Self.Book_issue" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Book_issue].[student_id] AS [student_id], 
+    [Book_issue].[book_id] AS [book_id], 
+    [Book_issue].[date_issue] AS [date_issue], 
+    [Book_issue].[date_due] AS [date_due]
+    FROM [dbo].[Book_issue] AS [Book_issue]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Book_issue_Book_inventory" Association="Self.FK_Book_issue_Book_inventory">
+      <End Role="Book_inventory" EntitySet="Book_inventory" />
+      <End Role="Book_issue" EntitySet="Book_issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Book_issue_student" Association="Self.FK_Book_issue_student">
+      <End Role="student" EntitySet="student" />
+      <End Role="Book_issue" EntitySet="Book_issue" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
