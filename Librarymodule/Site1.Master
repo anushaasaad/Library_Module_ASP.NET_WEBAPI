@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Librarymodule.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <%--Bootstrap--%>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+     <%-- Style Sheet--%>
+    <link href="css/Stylehome.css" rel="stylesheet" />
+    
+    <link href="css/loginstyle.css" rel="stylesheet" />
+    <link href="css/userprofilestyle.css" rel="stylesheet" />
+    
+    <%--font awesome--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <script src="Bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="Bootstrap/js/popper.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="nav"></div>
+                <nav class="navbar navbar-expand-lg navbar-light homenav">
+                <a class="navbar-brand" href="#">
+                <img src="img/icon.jpg" height="80" width="100"/>
+                    
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="https://localhost:44305/homepage.aspx">Home</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Terms</a>
+                    </li>
+                  </ul>
+                    <ul class="navbar-nav nav-list">
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">View Books</asp:LinkButton>
+ 
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click" Visible="False">Book Inventory</asp:LinkButton>
+ 
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click" Visible="False">Author Manage</asp:LinkButton>
+ 
+                        </li> 
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Student Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item active">
+                           <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" Visible="False" OnClick="LinkButton3_Click">Log out</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" Visible="False">Hello user</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="Contentplaceholder1" runat="server">
+
+            </asp:ContentPlaceHolder> 
+        </div>
+    </form>
+</body>
+</html>
