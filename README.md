@@ -4,3 +4,6 @@ Library management web application. This system can be used to manage books, aut
 -The software helps admin/Librarian manage author details and book inventory details (add, update, delete)
 -Librarian is also responsible for issuing book to a student.
 -Students can view which books are available and in stock from the comfort of their homes
+
+
+![admin](https://user-images.githubusercontent.com/62885127/206414851-3149fad8-2fce-4e1b-b377-24899b9785bc.PNG)
