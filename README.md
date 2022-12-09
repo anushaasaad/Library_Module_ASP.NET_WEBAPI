@@ -5,6 +5,14 @@ Library management web application. This system can be used to manage books, aut
 -Librarian is also responsible for issuing book to a student.
 -Students can view which books are available and in stock from the comfort of their homes
 
+## Contact
+<ul>
+  <li>Anusha Saad</li>
+   <a href="https://www.linkedin.com/in/anusha-saad-444a891a3/"><img name = "LinkedIn" src = "https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <li>Saman Khan</li>
+   <a href="https://www.linkedin.com/in/saman-khan-346a84215/"><img name = "LinkedIn" src = "https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+ 
+</ul>
 
 ### Project README: <a href="README.md"/>README</a>
 ### WebAPI CODE: <a href="libraria_WebAPI/">WebAPI CODE</a>
